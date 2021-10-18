@@ -2,10 +2,12 @@
 *{
     padding: 0;
     margin: 0;
+    transition: 0.15s;
 }
 
-p, h1, h2, h3, h4, h5, h6{
-    color: #CFC688;
+p, h1, h2, h3, h4, h5, h6, span{
+    color: #FFEDAF;
+    text-shadow: 0 0 2px black;
     }
     h1{
         font-size: 3em;
@@ -13,7 +15,7 @@ p, h1, h2, h3, h4, h5, h6{
     p{
         font-size: 1.25em;
         max-width: 70ch;
-        margin: 0.7em 1em;
+        margin: 0.7em 2em;
         line-height: 1.75;
     }
 
@@ -21,8 +23,19 @@ a{
     text-decoration-color: darkgray;
     }
     a:visited{
-        text-decoration-color: #383E40;
+        text-decoration-color: #1C202C;
     }
+
+hr{
+    width: 70%;
+    height: 0;
+    margin: 0.7em 1em;
+
+    border-style: dotted;
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-bottom-color: #FFEDAF;
+}
 
 .container{
     height: 100%;
@@ -39,56 +52,47 @@ a{
     top: 0;
     left: 0;
 
-    background-color: #0D1015;
-}
-
-#body > img{
-    width: auto;
-}
-
-#body > .container{
-    position: absolute;
-    top: 0;
-    left: 0;
+    background-color: #30211E;
 }
 
 
 /* ---------- navbar style ---------- */
 #navbar{
-    height: 7vh;
+    height: fit-content;
     position: sticky;
     top:0;
     left:0;
 
     flex-direction: row;
-    background-color: #5D6C89F0;
+    align-items: center;
+    background-color: #30211E;
     border-style: solid;
     border-width: 0;
     border-bottom-width: 2px;
-    border-bottom-color: #CFC688;
-
+    border-bottom-color: #FFEDAF;
     }
     #navbar > .left.container{
-        width: 22%;
+        width: fit-content;
+        height: inherit;
+        margin-left: 20px;
+        margin-right: 20px;
 
         flex-direction: row;
         justify-content: end;
         align-items: center;
+        flex-shrink: 0;
         }
         #navbar > .left > img{
             height: 92%;
-            margin-right: 4%;
+            max-height: 7vh;
         }
         #navbar > .left > h1{
-            color: #FFEDAF;
+            text-shadow: 0 0 10px #FFEDAF;
         }
 
     #navbar > .right.container{
-        padding-left: 5%;
-        padding-right: 5%;
-
+        height: fit-content;
         flex-direction: row;
-        align-items: center;
         justify-content: center;
         }
         #navbar > .right ul{
@@ -96,7 +100,7 @@ a{
 
             display: flex;
             justify-content: space-around;
-
+            flex-wrap: wrap;
         }
 
     #navbar li{
@@ -104,7 +108,6 @@ a{
     }
 
     #navbar h2:hover{
-        color: #FFEDAF;
         text-decoration: underline;
         text-decoration-color: antiquewhite;
         transform: scale(1.1);
@@ -113,17 +116,59 @@ a{
 
 /* ---------- content style ---------- */
 #content{
-    width: 58%;
     align-self: end;
+    width: fit-content;
 
     align-items: center;
-    background-color: #5D6C8950;
-}
-    #content > h1{
-        width: 70%;
-        color: #FFEDAF;
-        text-align: center;
-        border-bottom-style: dotted;
-        border-width: 1.5px;
-        border-bottom-color: #FFEDAF;
+    background-image: linear-gradient(to right, #00000000, #30211EB9 10%, #30211EFF 50%, #30211EFF);
     }
+    #content > img{
+        position: fixed;
+        width: auto;
+        height: 100vh;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #content > h1{
+        padding-top: 20px;
+        text-align: center;
+    }
+    #content > p{
+        width: fit-content;
+        padding-left: 3em;
+    }
+
+    #content > button{
+        height: 50px;
+        width: 50%;
+        margin: 20px 0 50px 0;
+        padding-bottom: 0;
+
+        color: antiquewhite;
+        background-color: #1C202C;
+        text-decoration: underline;
+        border-radius: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        border-width: 1px;
+        }
+
+        #content > button:hover{
+            transform: scale(1.02);
+        }
+        button > span{
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        button > span:hover{
+            transform: scale(1.5);
+        }
+        /*
+        knappen beter sig lite konstigt vid kanterna,
+        fattar inte varför :/
+        */
