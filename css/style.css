@@ -23,7 +23,7 @@ a{
     text-decoration-color: darkgray;
     }
     a:visited{
-        text-decoration-color: #1C202C;
+        text-decoration-color: black;
     }
 
 hr{
@@ -73,9 +73,7 @@ hr{
     }
     #navbar > .left.container{
         width: fit-content;
-        height: inherit;
-        margin-left: 20px;
-        margin-right: 20px;
+
 
         flex-direction: row;
         justify-content: end;
@@ -83,8 +81,11 @@ hr{
         flex-shrink: 0;
         }
         #navbar > .left > img{
-            height: 92%;
-            max-height: 7vh;
+            padding-top: 0.5vh;
+            padding-bottom: 0.5vh;
+            margin-left: 20px;
+            margin-right: 10px;
+            height: 7vh;
         }
         #navbar > .left > h1{
             text-shadow: 0 0 10px #FFEDAF;
@@ -93,10 +94,11 @@ hr{
     #navbar > .right.container{
         height: fit-content;
         flex-direction: row;
-        justify-content: center;
+        margin-right: 20px;
+        justify-content: end;
         }
         #navbar > .right ul{
-            width: 100%;
+            width: 90%;
 
             display: flex;
             justify-content: space-around;
